@@ -91,7 +91,7 @@ Character('Alvina of the Darkroot Wood','img/Alvina.png','sound/Alvina0.mp3','so
 Character('Anastacia of Astora','img/Anastacia.png','sound/Anastacia1.mp3','sound/Anastacia2.mp3','sound/Anastacia3.mp3',osszes=20,done=charP['Anastacia of Astora'])
 Character('Andre of Astora','img/Andre.png','sound/Andre0.mp3','sound/Andre1.mp3','sound/Andre2.mp3','','','',osszes=106,done=charP['Andre of Astora'])
 Character('Big Hat Logan','img/Logan.png','sound/Logan0.mp3','sound/Logan1.mp3','sound/Logan2.mp3',osszes=89,done=charP['Big Hat Logan'])
-Character('Crestfallen Merchant', 'img/Cmerchant.png','sound/CrestfallenMerchant1.mp3','sound/CrestfallenMerchant2.mp3','sound/CrestfallenMerchant3.mp3',osszes=51,done=charP['Crestfallen Merchant'])
+Character('Crestfallen Merchant', 'img/CMerchant.png','sound/CrestfallenMerchant1.mp3','sound/CrestfallenMerchant2.mp3','sound/CrestfallenMerchant3.mp3',osszes=51,done=charP['Crestfallen Merchant'])
 Character('Crestfallen Warrior', 'img/Cwarrior.png','sound/CrestfallenWarrior0.mp3','sound/CrestfallenWarrior1.mp3','sound/CrestfallenWarrior2.mp3',osszes=146, done=charP['Crestfallen Warrior'])
 Character('Crossbreed Priscilla', 'img/priscilla.png','sound/Priscilla0.mp3','sound/Priscilla1.mp3','sound/Priscilla2.mp3',osszes=15, done=charP['Crossbreed Priscilla'],mh='kyrande_foxfairy',szin_img='https://static-cdn.jtvnw.net/jtv_user_pictures/9e170390-1005-4143-8c89-6b4855131b6c-profile_image-150x150.png')
 Character('Dark Sun Gwyndolin', 'img/Gwyndolin.png','sound/Gwyndolin0.mp3','sound/Gwyndolin1.mp3','sound/Gwyndolin2.mp3',osszes=35,done=charP['Dark Sun Gwyndolin'])
