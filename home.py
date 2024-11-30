@@ -97,7 +97,7 @@ Character('Crossbreed Priscilla', 'img/priscilla.png','sound/Priscilla0.mp3','so
 Character('Dark Sun Gwyndolin', 'img/Gwyndolin.png','sound/Gwyndolin0.mp3','sound/Gwyndolin1.mp3','sound/Gwyndolin2.mp3',osszes=35,done=charP['Dark Sun Gwyndolin'])
 Character('Darkstalker Kaathe', 'img/Kaathe.png','sound/Kaathe0.mp3','sound/Kaathe1.mp3','sound/Kaathe2.mp3',osszes=105,done=charP['Darkstalker Kaathe'])
 Character('Domhnall of Zena', 'img/Domhnall.png','sound/Domhnall0.mp3','sound/Domhnall1.mp3','sound/Domhnall2.mp3',osszes=52,done=charP['Domhnall of Zena'])
-Character('Dusk of Oolacile', 'img/Dusk.png','sound/Dusk0.mp3','sound/Dusk1.mp3','sound/Dusk2.mp3',osszes=73,done=charP['Dusk of Oolacile'])
+Character('Dusk of Oolacile', 'img/dusk.png','sound/Dusk0.mp3','sound/Dusk1.mp3','sound/Dusk2.mp3',osszes=73,done=charP['Dusk of Oolacile'])
 Character('Eingyi', 'img/Eingyi.png','sound/Eingyi0.mp3','sound/Eingyi1.mp3','sound/Eingyi2.mp3',osszes=69,done=charP['Eingyi'])
 Character('Elizabeth', 'img/Elizabeth.png','sound/Elizabeth0.mp3','sound/Elizabeth1.mp3','sound/Elizabeth2.mp3',osszes=67,done=charP['Elizabeth'])
 Character('Giant Blacksmith', 'img/GiantBlacksmith.png','sound/GiantBlacksmith0.mp3','sound/GiantBlacksmith1.mp3','sound/GiantBlacksmith2.mp3',osszes=44,done=charP['Giant Blacksmith'])
