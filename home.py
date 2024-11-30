@@ -37,7 +37,8 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
         if mh!='':
             st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+mh+"</p>",unsafe_allow_html=True)
         else:
-            st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+username+"</p>",unsafe_allow_html=True)
+            if username != "":
+                st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+username+"</p>",unsafe_allow_html=True)
 st.markdown("""
             <style>
             .stAudio{
