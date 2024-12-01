@@ -107,6 +107,7 @@ charP = {
     }
 sum = sum(charP.values())
 ovP = sum/3012
+st.image('dsr.png')
 st.progress(ovP,"Jelenlegi állapot " +str(round(ovP*100,1))+" %")
 Character('Alvina of the Darkroot Wood','img/Alvina.png','sound/Alvina0.mp3','sound/Alvina1.mp3','sound/Alvina2.mp3',1,osszes=58,done=charP['Alvina of the Darkroot Wood'])
 Character('Anastacia of Astora','img/Anastacia.png','sound/Anastacia1.mp3','sound/Anastacia2.mp3','sound/Anastacia3.mp3',2,osszes=20,done=charP['Anastacia of Astora'])

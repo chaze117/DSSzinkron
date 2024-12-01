@@ -5,11 +5,10 @@ from st_login_form import *
 
 
 
-st.logo(image="dsr.png",icon_image="icon.png",size='large')
-
 pg = st.navigation([
-        st.Page("home.py", title="Főoldal"), 
-        st.Page("user.py", title="Felhasználó")
+        st.Page("dsr.py", title="Dark Souls Remastered"), 
+        st.Page("translate.py", title="Fordítás"),
+        #st.Page("test.py", title="Teszt")
         ])
 
 pg.run()
@@ -36,6 +35,10 @@ with st.sidebar:
         if st.session_state["authenticated"]:
                         if st.session_state["username"]:
                                 st.success(f"Üdvözlet {st.session_state['username']}!")
+                                with st.expander("Profilkép"):
+                                        uploaded_file = st.file_uploader("pp",label_visibility='collapsed')
+                                        if uploaded_file is not None:
+                                                client.upload("profilepics",source='local',destination_path=st.session_state['username'],file=uploaded_file,overwrite='true')
                         else:
                                 st.success("Welcome guest")
         else:
