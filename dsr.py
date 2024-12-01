@@ -1,15 +1,22 @@
 import streamlit as st
 from st_login_form import *
+client = st.connection(name="supabase", type=SupabaseConnection)
+characters = client.table('characters').select('*',count=None).order('id')
+characters = characters.execute()
+users = client.table("users").select('*',count=None)
+users = users.execute()
+
+def searchUser(data,id):
+    for item in data:
+        if item['id'] == id:
+            return item['username']
+        
 def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2='',h3='',szin_img='',osszes=0,done=0,mh=''):
-    client = st.connection(name="supabase", type=SupabaseConnection)
-    char = client.table('characters').select('*',count=None).eq('id',id)
-    char = char.execute()
-    uid = char.data[0]['assigned_user']
+    uid = characters.data[id-1]['assigned_user']
     username = ""
     img = ""
     if uid != None:
-        user = client.table("users").select('username',count=None).eq('id',uid).execute()
-        username = user.data[0]['username']
+        username = searchUser(users.data,uid)
         if client.get_public_url("profilepics",username) != None:
             img = client.get_public_url("profilepics",username)
     check = ""
@@ -39,6 +46,7 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
         else:
             if username != "":
                 st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+username+"</p>",unsafe_allow_html=True)
+
 st.markdown("""
             <style>
             .stAudio{
@@ -62,6 +70,7 @@ st.markdown("""
             }
             </style>
             """,unsafe_allow_html=True)
+
 charP = {
     'Alvina of the Darkroot Wood':0,
     'Anastacia of Astora':0,
@@ -105,10 +114,14 @@ charP = {
     "Vamos":0,
     "Vince of Thorolund":0,
     }
+
 sum = sum(charP.values())
 ovP = sum/3012
+
 st.image('dsr.png')
-st.progress(ovP,"Jelenlegi állapot " +str(round(ovP*100,1))+" %")
+
+st.progress(ovP,"Jelenlegi állapot " +str(round(ovP*100,1))+" %  - "+str(sum)+"/3012" )
+
 Character('Alvina of the Darkroot Wood','img/Alvina.png','sound/Alvina0.mp3','sound/Alvina1.mp3','sound/Alvina2.mp3',1,osszes=58,done=charP['Alvina of the Darkroot Wood'])
 Character('Anastacia of Astora','img/Anastacia.png','sound/Anastacia1.mp3','sound/Anastacia2.mp3','sound/Anastacia3.mp3',2,osszes=20,done=charP['Anastacia of Astora'])
 Character('Andre of Astora','img/Andre.png','sound/Andre0.mp3','sound/Andre1.mp3','sound/Andre2.mp3',3,osszes=106,done=charP['Andre of Astora'])
