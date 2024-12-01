@@ -12,13 +12,29 @@ def Char(id:int):
     uid = user.data[0]['id']
     texts = client.table('texts').select('*',count=None).eq('character_id',char.data[0]['id'])
     texts = texts.execute()
+    charname = char.data[0]['name']
     if char.data[0]['assigned_user'] == uid:
-        with st.expander(char.data[0]['name']):
-            for t in texts.data:
-                t.pop("character_id", None)
-                t.pop("id", None)
+        with st.expander(charname):
+                # col1, col2,col3,col4 = st.columns(4)
+                # with col1: st.write('Fájlnév')
+                # with col2: st.write('Angol')
+                # with col3: st.write('Magyar')
+                # with col4: st.write('Eredeti hang')
+                # for t in texts.data:
+                #     with st.container(border=True,height=100):
+                #         with col1: st.write(t['filename'])
+                #         with col2: st.write(t['eng_text'])
+                #         with col3: st.write(t['hun_text'])
+                row = st.columns(4)
+                for t in texts.data:
+                    row[0].container(height=100).write(t['filename'])
+                    row[1].container(height=100).write(t['eng_text'])
+                    row[2].container(height=100).write(t['hun_text'])
+                    row[3].container(height=100).audio(client.get_public_url(char.data[0]['name'],str(t['filename'])+'.mp3'))
                 
-            st.table(texts.data)            
+                    
+            
+                     
 
 
 if st.session_state["authenticated"]:

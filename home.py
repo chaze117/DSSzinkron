@@ -10,8 +10,8 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
     if uid != None:
         user = client.table("users").select('username',count=None).eq('id',uid).execute()
         username = user.data[0]['username']
-        if client.get_public_url("profilepics",st.session_state['username']) != None:
-            img = client.get_public_url("profilepics",st.session_state['username'])
+        if client.get_public_url("profilepics",username) != None:
+            img = client.get_public_url("profilepics",username)
     check = ""
     if done == osszes : check="✔️"
     with st.expander(character +" - "+ str(done) +"/"+str(osszes) + " "+check):
