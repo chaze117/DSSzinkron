@@ -17,8 +17,8 @@ def Char(id:int):
         with st.expander(charname):
                 for t in text.data:
                     with st.container(border=True):
-                        st.text_input(label='Angol',value=t['eng_text'],disabled=True)
-                        st.text_input(label="Magyar",value=t['hun_text'],disabled=True)
+                        st.text_input(label='Angol',value=t['eng_text'],disabled=True,key=str(t['id'])+"_eng")
+                        st.text_input(label="Magyar",value=t['hun_text'],disabled=True,key=str(t['id'])+"_hun")
                         st.write("Eredeti hang:")
                         st.audio(client.get_public_url(charname,str(t['filename'])+'.mp3'))
                         st.write("Magyar hang:")
