@@ -54,12 +54,12 @@ if len(st.session_state) > 0:
             uid = searchUser(users.data,st.session_state["username"])
             chars = []
             for c in characters.data:
-                if c['assigned_user'] == uid:
+                if c['assigned_user'] == uid or st.session_state["username"] == "Chaze":
                     chars.append(str(c['id']) + '. '+c['name'])
             if len(chars) > 0:
                 col1, col2 = st.columns(2)
                 with col1:
-                    char = st.selectbox("Karakter",chars)
+                    char = st.selectbox("Karakter",chars,key='cc')
                 id = str(char).split('.')[0]
                 charname = str(char).split('.')[1].removeprefix(' ')
                 texts = client.table('texts').select('id,hun_text',count=None).eq('character_id',id).execute()

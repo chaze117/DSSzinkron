@@ -1,5 +1,6 @@
 import streamlit as st
 from st_login_form import *
+
 client = st.connection(name="supabase", type=SupabaseConnection)
 characters = client.table('characters').select('*',count=None).order('id')
 characters = characters.execute()
@@ -12,7 +13,6 @@ def searchUser(data,id):
     for item in data:
         if item['id'] == id:
             return item['username']
-
 def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2='',h3='',szin_img='',osszes=0,mh=''):
     done = Done[character.replace("'",'')]
     uid = characters.data[id-1]['assigned_user']
@@ -49,7 +49,6 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
         else:
             if username != "":
                 st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+username+"</p>",unsafe_allow_html=True)
-
 st.markdown("""
             <style>
             .stAudio{
