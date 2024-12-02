@@ -29,7 +29,7 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
         st.progress(percent,str(round(percent*100))+'%')
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.image(char_img)
+            st.image(char_img,use_container_width=True)
         with col2:
             st.audio(a1)
             st.audio(a2)
@@ -42,8 +42,8 @@ def Character(character:str,char_img:str,a1:str,a3:str,a2:str,id:int,h1='',h2=''
             if img != "":
                 st.image(img)
             else:
-                if szin_img != '': st.image(szin_img)
-                else: st.image('img/nia.jpg')
+                if szin_img != '': st.image(szin_img,use_container_width=True)
+                else: st.image('img/nia.png',use_container_width=True)
         if mh!='':
             st.markdown("<p style='marginTop:-35px; font-size:25px'>Magyar hangja: "+mh+"</p>",unsafe_allow_html=True)
         else:
