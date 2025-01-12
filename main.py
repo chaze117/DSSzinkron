@@ -43,4 +43,4 @@ with st.sidebar:
                                 st.success("Welcome guest")
         else:
                         st.error("Nem vagy bejelentkezve!")
-        
+        st.warning("Az oldal átalakítás alatt egyes funkciók hibásan működhetnek!")
